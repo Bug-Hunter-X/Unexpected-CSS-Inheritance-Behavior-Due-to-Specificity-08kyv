@@ -1,0 +1,22 @@
+To reliably achieve the desired `color: green`, use the `!important` flag (though this is generally discouraged due to potential maintenance challenges) or restructure the CSS for better clarity. Here is a better solution:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green !important; /* Less preferred, use with caution */
+}
+
+/* Or, use more specific selectors to avoid inheritance conflicts: */
+div > p {
+  color: green;
+}
+```
+
+The second solution, using `div > p`, is far superior. It explicitly targets only direct children of `div`, creating clearer and maintainable code, avoiding the need for `!important`.
